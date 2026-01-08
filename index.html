@@ -1,22 +1,352 @@
-<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>zstar的安全屋</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
-if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
- font-family: BenderLight;
- src: local('Bender'), url("/font/BenderLight.ttf");
-}
-@font-face {
- font-family: 'JetBrains Mono';
- src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div class="posts"><a class="recent-post" href="/2023/02/16/hello-world/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/Life/">Life</a></object></span><span class="tags"><object><a href="/tags/Hexo/">Hexo</a></object></span><time datetime="2023-02-16T12:53:28.000Z">2023-02-16</time></div><h1 class="recent-title">Hexo建站流程全记录</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></object></a><a class="recent-post" href="/2023/02/16/chatgpt/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/ChatGPT/">ChatGPT</a></object></span><span class="tags"><object><a href="/tags/Qbot/">Qbot</a></object></span><time datetime="2023-02-16T12:53:28.000Z">2023-02-16</time></div><h1 class="recent-title">ChatGPT简介与Q群机器人部署教程</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></object></a></div><div id="paginator"><span class="page-number current">1</span></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/head.png" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://space.bilibili.com/472442675">zstar</a></h1><div id="description"><p>一个兴趣使然的创作者</p></div></div><div id="aside-block"><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">2</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">2</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">2</span></div></section></div><footer><nobr><span class="text-title">ICP</span><a class="text-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2021017852号-1</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{code.findCode();}</script><script src="/js/arknights.js"></script><script src="/js/pjax.js"></script><script>window.addEventListener("load",() => {pjax = new Pjax({
- cacheBust: false,
- selectors: ['title','article','#aside-block','.pjax-js'],
- switches: {'article': Pjax.switches.sideBySide},
- switchesOptions: {
-   'article': {
-     classNames: {
-       remove: "pjax-out",
-       add: "pjax-in"
-     }
-   }
- }
-});
-document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>zstar</title>
+
+    <meta name="author" content="zstar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/zstarlogo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  zstar
+                </p>
+                  <p> 西安电子科技大学硕士生，计算机科学与技术专业。</p>
+
+                  <p> 主要研究方向为计算机视觉、目标检测、主动学习、域自适应。</p>
+
+                  <p> CSDN博客专家，腾讯云创作之星，Bohrium特邀讲师，PyCon China 2025 演讲嘉宾，J SUPERCOMPUT、MACH VISION APPL、Discover Applied Sciences等SCI期刊审稿人</p>
+
+                  <p> 一个务实的理想主义者，热爱不息，保持好奇，终身学习。</p>
+
+                  <p> 联系邮箱：zstar1003@163.com &nbsp  |  &nbsp 联系微信：zstar1003 </p>
+                  <p style="text-align:center">
+                    <a href="https://zstar.blog.csdn.net">CSDN</a> &nbsp/&nbsp
+                    <a href="https://space.bilibili.com/472442675">BiliBili</a> &nbsp/&nbsp
+                    <a href="https://github.com/zstar1003">Github</a> &nbsp/&nbsp
+                    <a href="https://github.com/zstar1003/ragflow-plus/blob/main/docs/images/qrcode.jpg">微信公众号</a> &nbsp
+                  </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                 <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/zstar.jpg" class="hoverZoomLink">
+              </td>
+            </tr>
+          </tbody></table>
+   
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>科研/奖项</h2>
+                <ul>
+                  <li>
+                    一篇论文 <b>Xingyu Zhang</b>, Yongxu Liu, et al. "HiCAL: Hierarchical Consistency-based Active Learning for Drone-View Object Detection", IEEE Transactions on Geoscience and Remote Sensing, 2025. (SCI一区)
+                  </li>
+                  <li>一项专利《基于主动学习的遥感目标检测样本采样方法及装置》(申请号：2024106335430)</li>
+                  <li>两项软著：羲和(登记号：2021SR089125)/计算机服务器数据库信息监控系统(登记号：2025SR1795056)</li>
+                  <li>中国国际"互联网+"大学生创新创业大赛金奖</li>
+                  <li>美国大学生数学建模竞赛F奖/M奖（特等奖提名奖/一等奖）</li>
+                  <li>全国大学生数学建模竞赛陕西赛区一等奖</li>
+                  <li>中国大学生计算机设计大赛西北赛区二等奖</li>
+                  <li>研究生2024学年/2025学年学业奖学金一等奖</li>
+                </ul>
+              </td>
+            </tr>
+    </tbody></table>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:16px;width:100%;vertical-align:middle">
+          <h2>开发项目</h2>
+        </td>
+      </tr>
+    </tbody></table>
+
+ <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm6.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">Ragflow-Plus</span>
+        <br>
+        一个基于 Ragflow 的二次开发的 RAG 应用框架，致力于本地知识库的构建和大模型的交互优化，推动行业通解向领域特解迈进，Github仓库star量1k+，Docker镜像下载量5w+，在多家互联网初创团队和政企单位中部署应用。
+        <div class="paper">
+          <a href="https://www.bilibili.com/video/BV1UJLezaEEE">video</a> &nbsp/&nbsp
+          <a href="https://github.com/zstar1003/ragflow-plus">code</a> &nbsp/&nbsp
+          <a href="https://xdxsb.top/ragflow-plus">website</a>
+        </div>
+      </td>
+    </tr>
+
+    
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm7.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">FreeTex</span>
+        <br>
+        一个专注公式识别的软件，可通过截图将公式识别成可编辑的Latex语言，支持导出Latex和MathML格式，支持本地部署和联网多模态模型识别两种识别方式。
+        <div class="paper">
+          <a href="https://www.bilibili.com/video/BV1zPV2zVEMG">video</a> &nbsp/&nbsp
+          <a href="https://github.com/zstar1003/FreeTex">code</a> &nbsp/&nbsp
+          <a href="https://xdxsb.top/FreeTex">website</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm10.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">FreePDF</span>
+        <br>
+        一个PDF文献阅读器，支持将英文PDF文献按相同结构翻译成中文，并能通过设定的Ai模型实现对文章内容的问答，提升科研工作者的文献阅读效率。
+        <div class="paper">
+          <a href="https://www.bilibili.com/video/BV11EgkziEFg">video</a> &nbsp/&nbsp
+          <a href="https://github.com/zstar1003/FreePDF">code</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm8.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">FreeEditor</span>
+        <br>
+        一款简洁的双栏 Markdown 编辑器，支持实时预览和微信公众号样式导出。
+        <div class="paper">
+          <a href="https://www.bilibili.com/video/BV1EF47zhEaF">video</a> &nbsp/&nbsp
+          <a href="https://github.com/zstar1003/FreeEditor">code</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr> 
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm9.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">FreeGIF</span>
+        <br>
+        一个GIF录制、编辑、压缩三合一的软件。
+        <div class="paper">
+          <a href="https://www.bilibili.com/video/BV1bU43zYE7m">video</a> &nbsp/&nbsp
+          <a href="https://github.com/zstar1003/FreeGIF">code</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm1.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">缺陷检测AI集成处理软件</span>
+        <br>
+        一个用于事件相机(DVS)采集芯片图像的缺陷检测软件，包括项目管理/图像标注/模型训练/模型推理/结果可视化等分类、检测、分割任务的全流程。
+        <div class="paper">
+            商业项目，未开源，软件已应用于广州各缺陷检测工厂一线。
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm2.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">校园智能导览系统</span>
+        <br>
+            一个用于校园智能导览的系统，包含无人机三维场景扫描，三维模型分块重建，模型格式转换，场景搭建渲染全流程，支持第三人称/第一人称全场景漫游。
+        <br>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm3.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">交互式目标检测软件</span>
+        <br>
+            一个基于人机交互的目标检测软件，支持将各检测算法结果进行可视化，同时能用模型预推理的方式，借助历史模型，生成预标注数据，提升数据标注的效率。
+        <br>
+         <div class="paper">
+                <a href="https://www.bilibili.com/video/BV1Ve4y1J7xH">video</a> &nbsp/&nbsp
+                <a href="https://github.com/zstar1003/yolov5_pyqt5">code</a>
+          </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm4.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">自制游戏：逆转尸魂界</span>
+        <br>
+          一款独立制作的基于Unity引擎的2D横版跑酷游戏，玩家需同时操控两个角色，两个角色身处完全颠倒的平行世界，需要通过技能配合，应对不断出现的障碍物挑战。
+        <br>
+        <div class="paper">
+                <a href="https://www.bilibili.com/video/BV1hb4y1T7Nu">video</a> &nbsp/&nbsp
+                <a href="https://github.com/zstar1003/Reverse_Bleach">code</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm13.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">自制游戏：3D六子棋</span>
+        <br>
+          一个 3D 六子棋游戏，支持本地双人、人机对战和在线联机对战。
+        <br>
+        <div class="paper">
+                <a href="https://www.bilibili.com/video/BV17vUKBeEKx">video</a> &nbsp/&nbsp
+                <a href="https://zstar1003.itch.io/connect-6-master-3d">itch</a>
+        </div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm11.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">基于大语言模型的中国象棋AI对战平台</span>
+        <br>
+          受到Kaggle举办的AI国际象棋对战赛的启发，构建了一个中国象棋AI对战平台，实现不同语言模型进行象棋对弈。
+        <br>
+        <div class="paper">
+                <a href="https://www.bilibili.com/video/BV1M9thzRE56">video</a> &nbsp/&nbsp
+                <a href="https://github.com/zstar1003/AiChineseChess">code</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/xm12.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">羲和：一个诗词类摆件APP</span>
+        <br>
+           一个使用Flutter开发的APP，支持Android和iOS多端部署，每间隔一小时自动从网络获取诗词并显示，让旧手机成为一件优雅的摆件。
+        <br>
+        <div class="paper">
+            <a href="https://apps.apple.com/us/app/%E7%BE%B2%E5%92%8C/id6754879004">AppStore</a>
+        </div>
+      </td>
+    </tr>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:16px;width:100%;vertical-align:middle">
+          <h2>录制教程</h2>
+        </td>
+      </tr>
+    </tbody></table>
+
+     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+     </tbody>
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/kc1.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">通俗易懂的Latex教程</span>
+        <br>
+        本人制作的一套针对数学建模的Latex快速上手教程，颠覆传统学习路线，在业内广受好评，B站累计播放量7万+。
+        <br>
+        <div class="paper">
+                <a href="https://www.bilibili.com/video/BV1aT4y1f74w">video</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/kc2.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">数学建模绘图系列教程</span>
+        <br>
+        本人制作的一套针对数学建模的绘图相关教程，为Latex教程的有效补充，广受校友推荐，B站累计播放量3万+。
+        <br>
+        <div class="paper">
+            <a href="https://space.bilibili.com/472442675/lists/562950">video</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/kc3.png' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">方正飞腾及电子报纸排版部署系列教程</span>
+        <br>
+        本人制作的一套针对方正飞腾排版和电子报纸排版部署的教程，在学生报社面临数字化转型时制作，广受新闻传媒专业类学生推荐，B站累计播放量10万+。
+        <br>
+        <div class="paper">
+            <a href="https://space.bilibili.com/472442675/lists/367081">video</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src='images/kc4.jpg' style="width:100%;min-width:150px;max-width:300px">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <span class="papertitle">遗传算法求解TSP问题的方法讲解</span>
+        <br>
+        本人制作的一个关于遗传算法求解TSP问题的方法讲解，B站累计播放量1万+。
+        <br>
+        <div class="paper">
+            <a href="https://www.bilibili.com/video/BV1434y127YF">video</a> &nbsp/&nbsp
+            <a href="https://blog.csdn.net/qq1198768105/article/details/122760893">article</a>
+        </div>
+      </td>
+    </tr>
+    
+ </tbody></table>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr>
+    <td style="padding:0px">
+      <br>
+      <p style="text-align:right;">感谢<a href="https://jonbarron.info/">Jon Barron</a>开源的模板!</p>
+      <p style="text-align:center;">
+        <a href="https://beian.miit.gov.cn/" style="color:gray;">陕ICP备2024034698号-2</a>
+      </p>
+    </td>
+    </tr>
+    </tbody></table>
+         </tbody></table>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>
